@@ -1,3 +1,9 @@
+// import variables, function, mixins, animations
+@import "./Utils/variables";
+
+// import style : police
+@import "./Base/police";
+
 body {
-    background-color: red;
+    background-color: $color-white;
 }
