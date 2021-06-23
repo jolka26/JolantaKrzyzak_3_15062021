@@ -80,7 +80,7 @@ a {
 
     & h2 {
         padding: 15px;
-        margin: 0;
+        margin-bottom: 10px;
     }
    
     &__list li {
@@ -242,11 +242,43 @@ footer  {
 
 
 
-// @media (min-width: 668px) and (max-width: 1024px) { 
+@media (min-width: 668px) and (max-width: 768px) { 
 
-// .about {
-//     margin-bottom: 45px;
+.about {
+    margin-bottom: 45px;
    
-// } 
-// }
+} 
+
+.fonctionnement {
+    text-align: center;
+
+    &__list{
+      margin: 5px 0 10px 145px;
+    }
+}
+
+.restaurant__about {
+ 
+ font-size: 1rem;
+
+ & p {
+    margin: 20px;
+}
+
+& h3 {
+    margin: 0 10px 10px 20px;
+
+    &.h3 i {
+         margin-left: 470px;
+    }
+
+    & i {
+        margin-left: 440px;
+        top: 20px;
+    }
+}
+
+ }
+
+}
 

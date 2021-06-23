@@ -75,7 +75,7 @@ a {
 }
 .fonctionnement h2 {
   padding: 15px;
-  margin: 0;
+  margin-bottom: 10px;
 }
 .fonctionnement__list li {
   display: flex;
@@ -195,6 +195,36 @@ ul a {
 
 .fa-hands-helping {
   margin-right: 7px;
+}
+
+@media (min-width: 668px) and (max-width: 768px) {
+  .about {
+    margin-bottom: 45px;
+  }
+
+  .fonctionnement {
+    text-align: center;
+  }
+  .fonctionnement__list {
+    margin: 5px 0 10px 145px;
+  }
+
+  .restaurant__about {
+    font-size: 1rem;
+  }
+  .restaurant__about p {
+    margin: 20px;
+  }
+  .restaurant__about h3 {
+    margin: 0 10px 10px 20px;
+  }
+  .restaurant__about h3.h3 i {
+    margin-left: 470px;
+  }
+  .restaurant__about h3 i {
+    margin-left: 440px;
+    top: 20px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
