@@ -1,9 +1,87 @@
-body {
+h1, h4 {
+  font-family: "Shrikhand", sans-serif;
+}
+
+body, html {
   font-family: "Roboto", sans-serif;
 }
 
 body {
   background-color: #fff;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: 1em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.main__header h1 {
+  text-align: center;
+}
+
+.maps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dddddd;
+  height: 55px;
+}
+.maps__icone {
+  margin-right: 0;
+}
+.maps__search input {
+  background-color: #dddddd;
+  border: none;
+  text-align: center;
+}
+
+.about {
+  text-align: center;
+  background-color: #F2F2F2;
+  padding: 25px;
+  margin-bottom: 50px;
+}
+.about h2 {
+  font-weight: bold;
+}
+
+.btn__about button {
+  border-radius: 25px;
+  border: 2px solid transparent;
+  padding: 15px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #FF79DA;
+  box-shadow: 5px 5px 5px #BFBFBF;
+}
+
+.fonctionnement {
+  text-align: center;
+}
+.fonctionnement__list li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 25px;
+  margin: 10px 20px 20px 10px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px 2px #dddddd;
+  background-color: #F2F2F2;
+  width: 40vh;
 }
 
 /*# sourceMappingURL=style.css.map */
