@@ -65,6 +65,7 @@ a {
   color: #fff;
   background-color: #FF79DA;
   box-shadow: 5px 5px 5px #BFBFBF;
+  cursor: pointer;
 }
 
 .fonctionnement {
@@ -88,6 +89,28 @@ a {
   background-color: #F2F2F2;
   width: 40vh;
 }
+.fonctionnement__list li:hover {
+  background-color: #FF79DA;
+}
+.fonctionnement__list--number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  left: 10px;
+  background-color: #9356DC;
+  color: #fff;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 0 0 -25px;
+}
+.fonctionnement__list--icone {
+  width: 20px;
+  left: 20px;
+  margin-right: 35px;
+  position: relative;
+}
 
 .restaurant {
   background-color: #F2F2F2;
@@ -102,6 +125,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-bottom: 25px;
 }
 .restaurant__carte {
   height: 45vh;
@@ -119,8 +143,58 @@ a {
   object-fit: cover;
 }
 .restaurant__about {
-  text-align: center;
   font-size: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.restaurant__about p {
+  padding: 0;
+  margin: 10px;
+}
+.restaurant__about h3 {
+  padding: 0;
+  margin: 0 10px 10px 10px;
+}
+.restaurant__about h3.h3 i {
+  margin-left: 195px;
+}
+.restaurant__about h3 i {
+  margin-left: 170px;
+  position: relative;
+  top: 15px;
+}
+
+footer {
+  background-color: #353535;
+  color: #fff;
+  height: auto;
+}
+
+h4 {
+  padding: 20px;
+  margin-left: 25px;
+  margin-top: 0;
+  color: #fff;
+}
+
+ul {
+  margin: 0;
+}
+ul li {
+  padding: 5px;
+}
+ul a {
+  color: #fff;
+  margin: 0;
+}
+
+.fa-utensils {
+  margin-right: 14px;
+}
+
+.fa-hands-helping {
+  margin-right: 7px;
 }
 
 /*# sourceMappingURL=style.css.map */

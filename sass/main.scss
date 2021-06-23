@@ -69,6 +69,7 @@ a {
     color: $color-white;
     background-color: $color-secondaire;
     box-shadow: 5px 5px 5px $color-grey-shadow;
+    cursor: pointer;
 }
 
 .fonctionnement {
@@ -95,19 +96,48 @@ a {
         // box-shadow: 0px 0 20px $color-grey-medium;  
         background-color: $color-grey-light;
         width: 40vh;
-        // height: ;
+        // cursor: pointer;
+
+        &:hover {
+            background-color: $color-secondaire ;
+        }
 
     }
+    &__list--number {
+       
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 25px;
+            height: 25px;
+            left: 10px;
+            background-color: $color-primaire;
+            color: $color-white;
+            border-radius: 50%;
+            position: relative;
+            margin: 0 0 0 -25px;
+        }
+
+     &__list--icone {
+        width: 20px;
+        left: 20px;
+        margin-right: 35px;
+        position: relative;
+
+         
+      }
+     }   
+    
+    
    
-}
+
 
 
 .restaurant {
     background-color: $color-grey-light;
     box-sizing: border-box;
     width: 100%;
-  
-
+    
     & h2 {
         padding: 25px;
         margin: 0;
@@ -117,30 +147,97 @@ a {
         display: flex ;
         flex-wrap: wrap;
         justify-content: center;
+        padding-bottom: 25px;
     }
   
-&__carte {
-    height: 45vh;
-    width: auto;
-    background: $color-white;
-    border-radius: 20px;
-    box-sizing: border-box; 
-    // border: $color-white solid 1px;
-    box-shadow: 0px 0 20px $color-grey-medium;  
-    margin: 10px;
-    overflow: hidden;
+    &__carte {
+        height: 45vh;
+        width: auto;
+        background: $color-white;
+        border-radius: 20px;
+        box-sizing: border-box; 
+        // border: $color-white solid 1px;
+        box-shadow: 0px 0 20px $color-grey-medium;  
+        margin: 10px;
+        overflow: hidden;
 
+    }
+    &__carte img {
+        width:100%;
+        height: 75%;
+        object-fit: cover;
+    }
+    &__about {
+    
+        font-size: 0.7rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        // align-items: center;
+
+        & p {
+            padding: 0;
+            margin: 10px;
+        }
+
+        & h3 {
+            padding:0;
+            margin: 0 10px 10px 10px;
+
+            &.h3 i {
+                    margin-left: 195px;
+            }
+
+            & i {
+                margin-left: 170px;
+                position: relative;
+                top: 15px;
+            }
+        }
+
+       
+    }
+
+
+    // &fa-2x {
+    //     display: flex;
+    //     margin-left: 80px;
+    // }
 }
- &__carte img {
-     width:100%;
-     height: 75%;
-     object-fit: cover;
- }
- &__about {
-     text-align: center;
-     font-size: 0.7rem;
- }
+
+
+footer  {
+    
+    background-color: $color-grey-dark ;
+    color: $color-white;
+    height: auto;
 }
+    h4 {
+       padding: 20px;
+       margin-left: 25px;
+       margin-top: 0;
+       color: $color-white;
+    }
+
+    ul {
+        margin: 0;
+   
+
+        li {
+        padding: 5px;
+     }
+
+            a {
+                color: $color-white;
+                margin: 0;
+            }
+}
+    .fa-utensils {
+        margin-right: 14px;
+    }
+    .fa-hands-helping {
+        margin-right: 7px;
+    }
 
 
 
@@ -152,3 +249,4 @@ a {
    
 // } 
 // }
+
