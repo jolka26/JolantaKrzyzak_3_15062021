@@ -1,0 +1,35 @@
+
+footer  {
+    
+    background-color: $color-grey-dark ;
+    color: $color-white;
+    height: auto;
+}
+    h4 {
+       padding: 10px;
+       margin-left: 25px;
+       margin-top: 0;
+       color: $color-white;
+       font-size: 1.5rem;
+    }
+
+    ul {
+        margin: 0;
+   
+
+        li {
+        padding: 5px;
+     }
+
+            a {
+                color: $color-white;
+                margin: 0;
+            }
+}
+    .fa-utensils {
+        margin-right: 14px;
+    }
+    
+    .fa-hands-helping {
+        margin-right: 7px;
+    }

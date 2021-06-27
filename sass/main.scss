@@ -1,10 +1,14 @@
 // import variables, function, mixins, animations
-@import "./Utils/variables";
+@import "./Utils/variables", "./Utils/keyframes";
+
 
 // import style : police
 @import "./Base/police";
 
-//
+//import footer
+@import "./Layouts/header", "./Layouts/footer";
+
+
 
 body {
     background-color: $color-white;
@@ -27,22 +31,24 @@ a {
     text-decoration: none;
 }
 
-.main__header h1{
-    text-align: center;
+ .container {
+     margin:2% auto;
+     box-sizing: border-box;
+     width: 100%;
+ }
 
-}
-
+////// Maps /////
 .maps {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: $color-grey-medium;
     height: 55px;
-    
 
     &__icone {
         margin-right: 0;
     }
+
     &__search input {
         background-color: $color-grey-medium;
         border: none;
@@ -50,7 +56,8 @@ a {
     }
 }
 
-.about{
+//////Info Reservation ///////
+.about {
    text-align: center;
    background-color: $color-grey-light;
    padding: 25px;
@@ -61,17 +68,22 @@ a {
    }
 }
 
-.btn__about button{
+.btn__about button {
     border-radius: 25px;
     border: 2px solid transparent;
     padding: 15px;
     font-weight: bold;
     color: $color-white;
-    background-color: $color-secondaire;
+    background: linear-gradient(20deg, #f779f5, #ef69ed, #db6af2, #a96bf4, #a262f1);
     box-shadow: 5px 5px 5px $color-grey-shadow;
     cursor: pointer;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 }
 
+////Foncionnement //////
 .fonctionnement {
     box-sizing: border-box;
     width: 100%;
@@ -79,32 +91,39 @@ a {
    
 
     & h2 {
+        text-align: center;
         padding: 15px;
         margin-bottom: 10px;
     }
    
+    & ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+     }
+
+  
     &__list li {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        // flex-wrap: nowrap;
         padding: 5px;
         margin: 0px 20px 20px 0;
         border-radius: 35px;
-        box-shadow: 2px 2px 5px 2px $color-grey-medium;
-        // box-shadow: 0px 0 20px $color-grey-medium;  
+        box-shadow: 0px 0 10px $color-grey-medium;  
         background-color: $color-grey-light;
         width: 40vh;
         // cursor: pointer;
 
         &:hover {
-            background-color: $color-secondaire ;
+            background-color: lighten($color-primaire, 35%) ;
+            transform: scale(1.2);
+            
         }
 
     }
     &__list--number {
-       
             display: flex;
             align-items: center;
             justify-content: center;
@@ -123,16 +142,10 @@ a {
         left: 20px;
         margin-right: 35px;
         position: relative;
-
-         
       }
-     }   
-    
-    
-   
+}   
 
-
-
+///////Restooo////////
 .restaurant {
     background-color: $color-grey-light;
     box-sizing: border-box;
@@ -151,134 +164,314 @@ a {
     }
   
     &__carte {
-        height: 45vh;
+        height: 50vh;
         width: auto;
         background: $color-white;
         border-radius: 20px;
         box-sizing: border-box; 
-        // border: $color-white solid 1px;
-        box-shadow: 0px 0 20px $color-grey-medium;  
         margin: 10px;
         overflow: hidden;
 
+        &:hover {
+            box-shadow: 0px 0 10px $color-grey-dark; 
+        }
     }
+
     &__carte img {
         width:100%;
         height: 75%;
         object-fit: cover;
     }
+
     &__about {
-    
-        font-size: 0.7rem;
         display: flex;
+        font-size: 1.2rem; 
         flex-direction: column;
         justify-content: space-between;
-        // align-items: center;
 
+    
         & p {
-            padding: 0;
-            margin: 10px;
+            margin: 0 0 0 20px;
         }
-
+    
         & h3 {
-            padding:0;
-            margin: 0 10px 10px 10px;
-
-            &.h3 i {
-                    margin-left: 195px;
-            }
-
+            margin: 0 0 0 20px;
+        
             & i {
-                margin-left: 170px;
+                margin-left: 80%;
                 position: relative;
                 top: 15px;
             }
+    
+           &.h3 i {
+                margin-left: 83%;
+            }
         }
 
+        .fa-heart {
+                cursor: pointer;
+                font-size: 2rem;
+
+                &:hover {
+                    animation: heart  0.5s ease-in;
+                    animation-fill-mode: both;
+                }
+    
+        }
+     
+    }
+   
+}
+
+///////Page1 La Palette  Du Gout //////////
+
+.fa-arrow-left{
+    position: absolute;
+    top: 40px;
+    left: 20px;
+}
+
+.page1 img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu {
+    background-color: $color-grey-light;
+    border-radius: 35px 35px 0 0;
+    width: auto;
+    position: relative;
+    // display: flex;
+    margin-top: -40px;
+    padding: 20px 15px 30px 15px;
+
+    & h2 {
+        font-family: 'Shrikhand';
+    }
+    & i {
+        margin-left: 15vw;
+       
+        &:hover {
+            animation: heart  0.5s ease-in;
+            animation-fill-mode: both;
+        }
+    }
+    &__entree__list {
+        display: flex;
+        flex-direction: column;
+        // height: 50vh;
+        width: auto;
+        background: $color-white;
+        border-radius: 20px;
+        // box-sizing: border-box; 
+        margin: 5px;
+        justify-content: space-between;
+        
+    }
+}
+
+
+
+//////////////      MOBILE            ///////////
+//////////////////////////////////////////////////////////////
+
+@media only screen and (max-width: 667px) {
+
+    .about {
+        margin-bottom: 45px;
        
     }
-
-
-    // &fa-2x {
-    //     display: flex;
-    //     margin-left: 80px;
-    // }
-}
-
-
-footer  {
     
-    background-color: $color-grey-dark ;
-    color: $color-white;
-    height: auto;
-}
-    h4 {
-       padding: 20px;
-       margin-left: 25px;
-       margin-top: 0;
-       color: $color-white;
+    .fonctionnement {
+    
+        & h2 {
+        text-align: center;
+        }
+    
+        & ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    
+        &__list li { 
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 5px;
+            margin: 0px 20px 20px 0;
+            border-radius: 35px;
+            box-shadow: 2px 2px 5px 2px $color-grey-medium;
+            background-color: $color-grey-light;
+            width: 40vh;
+        }
     }
-
-    ul {
-        margin: 0;
-   
-
-        li {
-        padding: 5px;
-     }
-
-            a {
-                color: $color-white;
-                margin: 0;
+    
+    .restaurant__about {
+        font-size: 0.9rem;
+    
+        & p {
+        margin-left: 20px;
+        }
+    
+        & h3 {
+        margin: 0 10px 10px 20px;
+    
+            &.h3 i {
+             margin-left: 150px;
             }
-}
-    .fa-utensils {
-        margin-right: 14px;
-    }
-    .fa-hands-helping {
-        margin-right: 7px;
-    }
-
-
-
-
-@media (min-width: 668px) and (max-width: 768px) { 
-
-.about {
-    margin-bottom: 45px;
+    
+            & i {
+            margin-left: 110px;
+            }
+        }
    
-} 
-
-.fonctionnement {
-    text-align: center;
-
-    &__list{
-      margin: 5px 0 10px 145px;
+    
     }
 }
-
-.restaurant__about {
  
- font-size: 1rem;
+    
+//////////////////////////////TABLET ////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+ /* Tablet (Tablet, ordinateur max 1024) */
 
- & p {
-    margin: 20px;
-}
 
-& h3 {
-    margin: 0 10px 10px 20px;
+// @media (min-width: 667px) and (max-width: 767px) { 
 
-    &.h3 i {
-         margin-left: 470px;
-    }
+//     .fonctionnement li{
+ 
+//         margin-left: 90px;
+//         width: 100vh;
+  
+//     }
 
-    & i {
-        margin-left: 440px;
-        top: 20px;
-    }
-}
+//     .restaurant__about {
 
- }
+//         & p {
+//             margin-left: 20px;
+//             margin-top: -5px;
+//         }
 
-}
+//         & h3 {
+//             margin-left: 20px;
+//             margin-top: 0;
 
+//             & i {
+//                 margin-left: 600px;
+//                 top: 0;
+
+//             }
+
+//              &.h3 i {
+//                  margin-left: 620px;
+       
+//             }
+
+
+//     }
+
+//       }
+
+// }
+
+
+// //////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////
+// @media  (min-width: 768px) and (max-width: 1024px) {
+    
+//     .fonctionnement {
+
+//         & ul{
+//             display: flex;
+//             flex-direction: row;
+//             justify-content: space-between;
+//          }
+
+//         & li {
+//             justify-content: stretch;
+//                }
+
+//     }
+
+
+//     .restaurant__about {
+
+//         display: flex;
+//         font-size: 1.2rem;
+       
+
+//         & p {
+//             margin-left: 20px;
+//             margin-top: -20px;
+//         }
+
+//         & h3 {
+//             margin-left: 20px;
+//             margin-top: 20px;
+
+//             & i {
+//                 margin-left: 600px;
+//                 top: -15px;
+
+//             }
+
+//              &.h3 i {
+//                  margin-left: 600px;
+       
+//             }
+//         }
+
+//       }
+//     }
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+
+
+// @media (min-width: 1025px) and (max-width: 1600px) {
+
+//     .fonctionnement {
+
+//         & ul{
+//             display: flex;
+//             flex-direction: row;
+//             justify-content: space-between;
+//          }
+
+//         & li {
+//             justify-content: stretch;
+//                }
+
+//     }
+    
+
+//     .restaurant__about {
+//         display: flex;
+//         font-size: 1.2rem;
+
+//         & p {
+//             margin-left: 40px;
+//         }
+
+//         & h3 {
+//             margin-left: 40px;
+        
+
+//        & i {
+//            margin-left: 920px;
+//            top:25px;
+
+//        }
+
+//        &.h3 i {
+//         margin-left: 970px;
+       
+//     }
+
+
+//     }
+
+//       }
+// }
