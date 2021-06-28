@@ -20,6 +20,23 @@ body, html {
   font-family: "Roboto", sans-serif;
 }
 
+.btn__about button {
+  border-radius: 25px;
+  border: 2px solid transparent;
+  padding: 15px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(20deg, #f779f5, #ef69ed, #db6af2, #a96bf4, #a262f1);
+  box-shadow: 5px 5px 5px #BFBFBF;
+  cursor: pointer;
+}
+.btn__about button:hover {
+  transform: scale(1.2);
+}
+.btn__about button--order {
+  color: yellow;
+}
+
 .main__header h1 {
   text-align: center;
 }
@@ -108,20 +125,6 @@ a {
 }
 .about h2 {
   font-weight: bold;
-}
-
-.btn__about button {
-  border-radius: 25px;
-  border: 2px solid transparent;
-  padding: 15px;
-  font-weight: bold;
-  color: #fff;
-  background: linear-gradient(20deg, #f779f5, #ef69ed, #db6af2, #a96bf4, #a262f1);
-  box-shadow: 5px 5px 5px #BFBFBF;
-  cursor: pointer;
-}
-.btn__about button:hover {
-  transform: scale(1.2);
 }
 
 .fonctionnement {
@@ -254,26 +257,53 @@ a {
   width: auto;
   position: relative;
   margin-top: -40px;
-  padding: 20px 15px 30px 15px;
+  padding: 20px 5px 30px 5px;
 }
 .menu h2 {
   font-family: "Shrikhand";
 }
 .menu i {
-  margin-left: 15vw;
+  margin-left: 20vw;
 }
 .menu i:hover {
   animation: heart 0.5s ease-in;
   animation-fill-mode: both;
 }
-.menu__entree__list {
+.menu__title {
+  margin-top: 40px;
+  font-weight: 100;
+  border-bottom: #99E2D0 3px solid;
+  width: 48px;
+  padding-bottom: 8px;
+}
+.menu__name__list {
+  padding-left: 0;
+}
+.menu__name__list li {
   display: flex;
   flex-direction: column;
+  height: auto;
   width: auto;
   background: #fff;
-  border-radius: 20px;
+  border-radius: 25px;
+  margin-bottom: 10px;
+}
+.menu__name__list li h3 {
   margin: 5px;
+}
+.menu__name__list li p {
+  margin: 5px;
+}
+.menu__name__list li .description {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
   justify-content: space-between;
+  flex-wrap: nowrap;
+  height: auto;
+}
+.menu__name__list li .description .price {
+  margin-right: 20px;
 }
 
 @media only screen and (max-width: 667px) {

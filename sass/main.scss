@@ -5,6 +5,9 @@
 // import style : police
 @import "./Base/police";
 
+// import buttons
+@import "./Components/_buttons";
+
 //import footer
 @import "./Layouts/header", "./Layouts/footer";
 
@@ -68,20 +71,20 @@ a {
    }
 }
 
-.btn__about button {
-    border-radius: 25px;
-    border: 2px solid transparent;
-    padding: 15px;
-    font-weight: bold;
-    color: $color-white;
-    background: linear-gradient(20deg, #f779f5, #ef69ed, #db6af2, #a96bf4, #a262f1);
-    box-shadow: 5px 5px 5px $color-grey-shadow;
-    cursor: pointer;
+// .btn__about button {
+//     border-radius: 25px;
+//     border: 2px solid transparent;
+//     padding: 15px;
+//     font-weight: bold;
+//     color: $color-white;
+//     background: linear-gradient(20deg, #f779f5, #ef69ed, #db6af2, #a96bf4, #a262f1);
+//     box-shadow: 5px 5px 5px $color-grey-shadow;
+//     cursor: pointer;
 
-    &:hover {
-        transform: scale(1.2);
-    }
-}
+//     &:hover {
+//         transform: scale(1.2);
+//     }
+// }
 
 ////Foncionnement //////
 .fonctionnement {
@@ -244,31 +247,66 @@ a {
     position: relative;
     // display: flex;
     margin-top: -40px;
-    padding: 20px 15px 30px 15px;
+    padding: 20px 5px 30px 5px;
 
     & h2 {
         font-family: 'Shrikhand';
     }
     & i {
-        margin-left: 15vw;
+        margin-left: 20vw;
        
         &:hover {
             animation: heart  0.5s ease-in;
             animation-fill-mode: both;
         }
     }
-    &__entree__list {
-        display: flex;
-        flex-direction: column;
-        // height: 50vh;
-        width: auto;
-        background: $color-white;
-        border-radius: 20px;
-        // box-sizing: border-box; 
-        margin: 5px;
-        justify-content: space-between;
+    &__title {
+        margin-top: 40px;
+        font-weight: 100;
+        border-bottom: $color-tertiaire 3px solid;
+        width: 48px ;
+        padding-bottom: 8px;
         
     }
+
+    &__name__list  {
+      padding-left: 0;
+
+      & li {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: auto;
+        background: $color-white;
+        border-radius: 25px;
+        // box-sizing: border-box;
+        margin-bottom: 10px; 
+        
+        & h3 {
+            margin: 5px;
+        }
+        & p {
+            margin: 5px
+        }
+        .description {
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            height: auto;
+          
+
+        & .price {
+          margin-right: 20px
+         
+        }
+    }
+
+    
+      }
+    }
+  
 }
 
 

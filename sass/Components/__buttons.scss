@@ -1,0 +1,22 @@
+
+.btn__about button {
+    border-radius: 25px;
+    border: 2px solid transparent;
+    padding: 15px;
+    font-weight: bold;
+    color: $color-white;
+    background: linear-gradient(20deg, #f779f5, #ef69ed, #db6af2, #a96bf4, #a262f1);
+    box-shadow: 5px 5px 5px $color-grey-shadow;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    &--order {
+        @extend .btn__about;
+        
+       color: yellow;
+    }
+}
+
