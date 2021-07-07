@@ -12,6 +12,32 @@
     color: #af72fa;
   }
 }
+@keyframes refresh {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes progress-bar {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 h1, h4 {
   font-family: "Shrikhand", sans-serif;
   letter-spacing: 1px;
@@ -144,12 +170,11 @@ a {
 .fonctionnement {
   box-sizing: border-box;
   width: 100%;
-  padding-bottom: 25px;
+  padding-bottom: 45px;
 }
 .fonctionnement h2 {
   text-align: center;
-  padding: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 .fonctionnement ul {
   display: flex;
@@ -205,7 +230,8 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 25px;
+  padding-bottom: 45px;
+  margin-bottom: -20px;
 }
 .restaurant__carte {
   height: 50vh;
@@ -218,7 +244,7 @@ a {
   box-shadow: 0px 0 10px #BFBFBF;
 }
 .restaurant__carte:hover {
-  box-shadow: 0px 0 10px #9356DC;
+  box-shadow: 0px 0 10px #404040;
 }
 .restaurant__carte img {
   width: 100%;
@@ -232,26 +258,46 @@ a {
   justify-content: space-between;
 }
 .restaurant__about p {
-  margin: 0 0 0 20px;
+  margin: -15px 0 0 20px;
 }
 .restaurant__about h3 {
   margin: 0 0 0 20px;
 }
 .restaurant__about h3 i {
-  margin-left: 80%;
+  background-image: url(../images/icon/heart-regular.svg);
+  background-repeat: no-repeat;
+  width: 36px;
+  height: 55px;
+  padding: 5px;
   position: relative;
-  top: 15px;
+  top: 18px;
+  color: #fff;
 }
-.restaurant__about h3.h3 i {
-  margin-left: 83%;
+.restaurant__about h3 i:hover {
+  animation: heart 0.3s ease-in both;
+  background-image: url(/./images/icon/heart-solid1.svg);
+  transform: scale(1.4);
 }
-.restaurant__about .fa-heart {
+.restaurant .fa-heart {
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 25px;
+  position: relative;
 }
-.restaurant__about .fa-heart:hover {
-  animation: heart 0.5s ease-in;
-  animation-fill-mode: both;
+.restaurant .fa-heart:hover {
+  animation: heart 0.5s ease-in both;
+}
+.restaurant__new {
+  background-color: #99E2D0;
+  text-align: center;
+  position: relative;
+  float: right;
+  width: 100px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  color: #278870;
+  margin: -285px 15px 0 0;
 }
 
 .fa-arrow-left {
@@ -260,7 +306,7 @@ a {
   left: 20px;
 }
 
-.page1 img {
+.page img {
   width: 100%;
   height: 200px;
   object-fit: cover;
@@ -280,11 +326,25 @@ a {
   font-weight: normal;
 }
 .menu i {
-  margin-left: 18vw;
+  background-image: url(../images/icon/heart-regular.svg);
+  background-repeat: no-repeat;
+  width: 36px;
+  height: 55px;
+  padding: 5px;
+  position: relative;
+  top: 18px;
+  color: #fff;
+  top: -5px;
+  float: right;
+  margin-right: 5vw;
 }
 .menu i:hover {
-  animation: heart 0.5s ease-in;
-  animation-fill-mode: both;
+  animation: heart 0.3s ease-in both;
+  background-image: url(/./images/icon/heart-solid1.svg);
+  transform: scale(1.4);
+}
+.menu i:hover {
+  animation: heart 0.5s ease-in both;
 }
 .menu__title {
   margin-top: 40px;
@@ -295,21 +355,31 @@ a {
 }
 .menu__name__list {
   padding-left: 0;
+  animation: refresh 1s ease-out 0.5s both, opacity 1.5s ease-in-out 1s both;
 }
 .menu__name__list li {
   display: flex;
   flex-direction: column;
-  height: auto;
+  height: 80px;
   width: auto;
   background: #fff;
   border-radius: 25px;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px #BFBFBF;
   margin-bottom: 10px;
+  transition: padding-right 400ms ease-in-out;
 }
 .menu__name__list li h3 {
   margin: 5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .menu__name__list li p {
   margin: 5px;
+}
+.menu__name__list li:hover {
+  padding-right: 70px;
 }
 .menu__name__list li .description {
   display: flex;
@@ -317,13 +387,52 @@ a {
   align-items: baseline;
   justify-content: space-between;
   flex-wrap: nowrap;
-  height: auto;
+  height: 35px;
+  cursor: pointer;
+  margin: 0;
 }
 .menu__name__list li .description p {
+  white-space: nowrap;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
 .menu__name__list li .description .price {
-  margin-right: 20px;
+  margin-right: 10px;
+}
+.menu__name__list li .check {
+  display: flex;
+  background-color: #99E2D0;
+  margin: -5px 66px 0 0;
+  width: 66px;
+  height: 80px;
+  border-radius: 0 25px 25px 0;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -66px;
+  visibility: hidden;
+  transition: transform 420ms ease-in-out;
+  cursor: pointer;
+}
+.menu__name__list li .check .fa-check-circle {
+  color: #fff;
+  font-size: 30px;
+  margin: 0;
+}
+.menu__name__list li .check i:hover {
+  animation: unset;
+  background-image: none;
+}
+.menu__name__list li:hover .check {
+  visibility: visible;
+  animation: progress-bar 500ms both;
+  transform-origin: right;
+}
+.menu__name__list li:hover .check i {
+  animation: spin 400ms;
+  background-image: none;
+  transform: none;
+  top: 8px;
 }
 .menu .btn__order {
   display: flex;

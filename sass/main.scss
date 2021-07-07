@@ -1,5 +1,5 @@
 // import variables, function, mixins, animations
-@import "./Utils/variables", "./Utils/keyframes";
+@import "./Utils/variables", "./Utils/keyframes", "./Utils/mixins";
 
 
 // import style : police
@@ -90,13 +90,13 @@ a {
 .fonctionnement {
     box-sizing: border-box;
     width: 100%;
-    padding-bottom: 25px;
+    padding-bottom: 45px;
    
 
     & h2 {
         text-align: center;
-        padding: 15px;
-        margin-bottom: 10px;
+        // padding: 10px;
+        margin-bottom: 30px;
     }
    
     & ul{
@@ -117,10 +117,9 @@ a {
         box-shadow: 0px 0 10px $color-grey-medium;  
         background-color: $color-grey-light;
         width: 40vh;
-        // cursor: pointer;
 
         &:hover {
-            background-color: lighten($color-primaire, 35%) ;
+            background-color: lighten($color-primaire, 35%);
             transform: scale(1.2);
             
         }
@@ -164,7 +163,8 @@ a {
         display: flex ;
         flex-wrap: wrap;
         justify-content: center;
-        padding-bottom: 25px;
+        padding-bottom: 45px;
+        margin-bottom: -20px;
     }
   
     &__carte {
@@ -178,7 +178,7 @@ a {
         box-shadow: 0px 0 10px $color-grey-shadow;
 
         &:hover {
-            box-shadow: 0px 0 10px $color-primaire; 
+            box-shadow: 0px 0 10px darken($color-grey-shadow, 50%); 
         }
     }
 
@@ -195,35 +195,47 @@ a {
         justify-content: space-between;
     
         & p {
-            margin: 0 0 0 20px;
+            margin: -15px 0 0 20px;
         }
     
         & h3 {
             margin: 0 0 0 20px;
         
-            & i {
-                margin-left: 80%;
-                position: relative;
-                top: 15px;
-            }
-    
-           &.h3 i {
-                margin-left: 83%;
-            }
-        }
 
-        .fa-heart {
-                cursor: pointer;
-                font-size: 2rem;
-
-                &:hover {
-                    animation: heart 0.5s ease-in;
-                    animation-fill-mode: both;
-                }
-    
+        & i {
+            @include heartIcon;
+         }
+          
         }
      
     }
+
+    .fa-heart {
+        cursor: pointer;
+        font-size: 25px;
+        position: relative;
+        
+
+         &:hover {
+           animation: heart 0.5s ease-in both;
+                }
+}
+
+        &__new {
+            background-color: $color-tertiaire;
+            text-align: center;
+            position: relative;
+            float: right;
+            width: 100px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+            color: darken($color-tertiaire, 40%);
+            margin: -285px 15px 0 0;
+           
+        }
+    
    
 }
 
@@ -235,7 +247,7 @@ a {
     left: 20px;
 }
 
-.page1 img {
+.page img {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -256,13 +268,16 @@ a {
         font-weight: normal;
     }
     & i {
-        margin-left: 18vw;
-       
+      @include heartIcon;
+        top: -5px;
+        float: right;
+        margin-right: 5vw;
+
         &:hover {
-            animation: heart  0.5s ease-in;
-            animation-fill-mode: both;
+            animation: heart 0.5s ease-in both;
         }
     }
+
     &__title {
         margin-top: 40px;
         font-weight: lighter;
@@ -274,22 +289,33 @@ a {
 
     &__name__list  {
       padding-left: 0;
+      @include refreshAnimation;
+  
+       
 
       & li {
         display: flex;
         flex-direction: column;
-        height: auto;
+        height: 80px;
         width: auto;
         background: $color-white;
         border-radius: 25px;
-        // box-sizing: border-box;
+        box-sizing: border-box;
+        box-shadow: 0 0 5px $color-grey-shadow; 
         margin-bottom: 10px; 
+        transition: padding-right 400ms ease-in-out;
+       
         
         & h3 {
             margin: 5px;
+            @include rollUp;
         }
         & p {
             margin: 5px
+        }
+
+        &:hover {
+            padding-right: 70px;
         }
         .description {
             display: flex;
@@ -297,21 +323,70 @@ a {
             align-items: baseline;
             justify-content: space-between;
             flex-wrap: nowrap;
-            // height: 35px;
-            height: auto;
+            height: 35px;;
+            cursor: pointer;
+            margin:0;
          
             & p {
-                text-overflow: ellipsis;
+             @include rollUp;
+        
             }
 
-        & .price {
-          margin-right: 20px
-         
-        }
-        }
+            & .price {
+                margin-right: 10px;
+            }
 
     
-      }
+        
+        }
+        
+        .check {
+            display: flex;
+            background-color: $color-tertiaire;
+            margin: -5px 66px 0 0;
+            width: 66px;
+            height: 80px;
+            border-radius: 0 25px 25px 0;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: -66px;
+            visibility: hidden;
+            transition: transform 420ms ease-in-out;
+            cursor: pointer;
+
+            & .fa-check-circle {
+                color: #fff;
+                font-size: 30px ;
+                margin:0;
+            }
+            & i:hover {
+                animation: unset;
+                background-image: none;
+                // animation: spin 400ms; 
+                // transform: rotate(360deg);
+               
+            }
+
+          
+         }
+         &:hover .check {
+            // transform: translate(-66px);
+            visibility: visible;
+            animation: progress-bar 500ms both;
+            transform-origin: right;
+            
+
+
+            & i {
+                animation: spin 400ms; 
+                background-image: none;
+                transform: none;
+                top: 8px;
+            }
+            }
+        }
+
     }
     .btn__order {
         display: flex ;

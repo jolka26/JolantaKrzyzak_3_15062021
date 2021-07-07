@@ -1,0 +1,31 @@
+@mixin refreshAnimation {
+    animation: refresh 1s ease-out 0.5s both, opacity 1.5s ease-in-out 1s both;    
+}
+
+@mixin rollUp {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@mixin heartIcon {
+    background-image: url(../images/icon/heart-regular.svg);
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 55px;
+    padding: 5px;
+    position: relative;
+    top: 18px;
+    color: $color-white;
+
+         &:hover {
+           animation: heart 0.3s ease-in both;
+           background-image: url(/./images/icon/heart-solid1.svg);
+           transform: scale(1.4);
+                }
+}
+     
+        // width: 36px;
+        // // height: 36px;
+        // font-size: 35px;
+        // top: 0px;

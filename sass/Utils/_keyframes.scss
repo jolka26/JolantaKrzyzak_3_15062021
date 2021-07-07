@@ -13,3 +13,35 @@
     color: #af72fa;
     }
   }
+
+
+  @keyframes refresh {
+  0% {
+      transform: translateY(100px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+  }
+
+
+@keyframes progress-bar{
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+        
+    }
+}
+
+@keyframes spin{
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+      }
+  }
