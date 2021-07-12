@@ -1,0 +1,18 @@
+///// Maps /////
+.maps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-grey-medium;
+    height: 55px;
+
+    &__icone {
+        margin-right: 0;
+    }
+
+    &__search input {
+        background-color: $color-grey-medium;
+        border: none;
+        text-align: center;
+    }
+}
